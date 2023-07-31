@@ -74,7 +74,11 @@
             }
           },
           "defaultConfiguration": "development",
-          "options": { "extraWebpackConfig": "webpack.config.js", "port": 5100, "publicHost": "http://localhost:5100" }
+          "options": {
+            "extraWebpackConfig": "webpack.config.js",
+            "port": 5100,
+            "publicHost": "http://localhost:5100"
+          }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",

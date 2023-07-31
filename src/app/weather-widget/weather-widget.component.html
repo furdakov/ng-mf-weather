@@ -19,4 +19,12 @@
       Imagine to get the weather for "{{ locationToSearch }}" displayed here :)
     </div>
   </div>
+
+  <div>Current user is: {{ user$ | async }}</div>
+
+  <button [routerLink]="['nested']">
+    Navigate to nested
+  </button>
+
+  <router-outlet></router-outlet>
 </div>

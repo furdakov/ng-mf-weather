@@ -8,6 +8,7 @@ import {
 import { environment } from 'src/environments/environment';
 import { DummyComponent } from '../dummy/dummy.component';
 import { AdDirective } from './ad.directive';
+import { SharedService } from "@ng-mf/shared";
 
 interface AbstractAddAlertButtonComponent {
   location: string;
@@ -24,8 +25,12 @@ export class WeatherWidgetComponent {
   @ViewChild(AdDirective, { static: true }) adHost!: AdDirective;
   locationToSearch = '';
   location = '';
+  public user$;
 
-  constructor(private componentFactoryResolver: ComponentFactoryResolver) {}
+  constructor(private componentFactoryResolver: ComponentFactoryResolver,
+              private sharedService: SharedService) {
+    this.user$ = this.sharedService.userName.asObservable();
+  }
 
   async seaerch() {
     this.locationToSearch = this.location;
